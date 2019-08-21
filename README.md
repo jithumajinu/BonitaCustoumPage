@@ -1,8 +1,11 @@
  Link : https://documentation.bonitasoft.com/bonita/7.9/ <br>
  Link : https://community.bonitasoft.com/project <br>
  Link : https://www.youtube.com/watch?v=QgAJatzP46g <br>
+ # custom widget <br>
+ Link https://github.com/jithumajinu/BonitaCustoumPage/tree/master/widget-sampleform/resources <br>
 
 
+ # custom Page <>
 # Developper Documentation
 
 #Task list
