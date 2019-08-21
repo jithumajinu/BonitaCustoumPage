@@ -1,0 +1,225 @@
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+.glyphicon-repeat-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
+
+
+h1 {
+    font-size: 214.28571429%;
+    font-family: "Signika-Semibold", sans-serif, sans-serif;
+    font-weight: 300;
+    color: #dd0033;
+}
+
+h2 {
+    font-size: 171.42857143%;
+    font-family: "Signika-Semibold", sans-serif, sans-serif;
+    font-weight: 300;
+    color: #dd0033;
+}
+
+
+.section.tasks .datatable .td > span {
+  overflow: hidden;
+}
+.section.tasks .datatable .td > span.prepend {
+  font-weight: bold;
+  padding-right: 5px;
+}
+.section.tasks .datatable .td_displaydescription {
+  width: 90%;
+  padding: 1px 0 10px 20px;
+  border-bottom: 2px dotted #f2f2f2;
+  /** hack for merging border on tr hover */
+  margin-bottom: -1px;
+  word-wrap: break-word;
+}
+.section.tasks .datatable .tr_last .td_displaydescription {
+  border-color: transparent;
+}
+.section.tasks .datatable .td_displayname {
+  width: 50%;
+}
+.section.tasks .datatable .td_displayname > span.prepend {
+  padding-left: 20px;
+/*  background: url("../../../../../../themeResource?theme=portal&location=skin/images/metadata-task.png") transparent no-repeat left center !important;
+*/
+}
+.section.tasks .datatable .td_displayname > span.prepend.user_task {
+  background: url("../../../themeResource?theme=portal&location=skin/images/metadata-user.png") transparent no-repeat left center !important;
+}
+.section.tasks .datatable .td_displayname > span.prepend.manual_task {
+  background: url("../../../themeResource?theme=portal&location=skin/images/metadata-user.png") transparent no-repeat left center !important;
+}
+.section.tasks .datatable .td_displayname > span.prepend.automatic_task {
+  background: url("../../../themeResource?theme=portal&location=skin/images/metadata_automaticTask_small.png") transparent no-repeat left center !important;
+}
+.section.tasks .datatable .td_displayname > span.prepend.call_activity {
+  background: url("../../../themeResource?theme=portal&location=skin/images/metadata_callactivity_small.png") transparent no-repeat left center !important;
+}
+.section.tasks .datatable .td_displayname > span.prepend.multi_instance_activity {
+  background: url("../../../themeResource?theme=portal&location=skin/images/metadata_multi_instance_small.png") transparent no-repeat left center !important;
+}
+.section.tasks .datatable .td_displayname > span.prepend.loop_activity {
+  background: url("../../../themeResource?theme=portal&location=skin/images/metadata_loop_small.png") transparent no-repeat left center !important;
+}
+.section.tasks .datatable .td_duedate > span.prepend,
+.section.tasks .datatable .td_archiveddate > span.prepend,
+.section.tasks .datatable .td_last_update_date > span.prepend {
+  background: url("../../../themeResource?theme=portal&location=skin/images/metadata-due-date.png") transparent no-repeat left center !important;
+  padding-left: 20px;
+}
+.section.tasks .datatable .td_executedby_executedby > span.prepend {
+  padding-left: 20px;
+}
+.section.tasks .datatable .td_executedbysubstitute_executedbysubstitute {
+  display: none;
+}
+.section.tasks .datatable .tr {
+  padding: 10px 0 0 10px;
+  width: 100%;
+  border: 1px solid transparent;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+.section.tasks .datatable .tr:hover {
+  cursor: pointer;
+}
+.section.tasks .datatable .tr:hover {
+  background-color: #ffffff;
+  border-color: #f2f2f2;
+  /** hack for merging border on hover */
+  margin-top: -3px;
+  padding-top: 13px;
+}
+.page_casemoredetails .section.tasks .datatable .tr:hover {
+  cursor: auto;
+}
+.section.tasks.failed .datatable .td_displayname,
+.section.tasks.performed .datatable .td_displayname {
+  width: 100%;
+}
+.section.tasks.failed .datatable .td_last_update_date,
+.section.tasks.performed .datatable .td_last_update_date,
+.section.tasks.failed .datatable .td_archiveddate,
+.section.tasks.performed .datatable .td_archiveddate {
+  width: 50%;
+  padding-top: 2px;
+}
+.section.cases .datatable .td > span.prepend {
+  font-weight: bold;
+  padding-right: 5px;
+}
+.section.cases .td_start > span.prepend,
+.section.cases .td_archiveddate > span.prepend {
+  background: url("../../../bthemeResource?theme=portal&location=skin/images/metadata-due-date.png") transparent no-repeat left center !important;
+  padding-left: 20px;
+}
+.section.cases .td_started_by_started_by > span.prepend {
+  padding-left: 20px;
+  background: url("../../../themeResource?theme=portal&location=skin/images/metadata-task.png") transparent no-repeat left center !important;
+}
+.section.cases .td_started_by_started_by > span.prepend.user_task {
+  background: url("../../../themeResource?theme=portal&location=skin/images/metadata-user.png") transparent no-repeat left center !important;
+}
+.section.cases .td_started_by_started_by > span.prepend.manual_task {
+  background: url("../../../themeResource?theme=portal&location=skin/images/metadata-user.png") transparent no-repeat left center !important;
+}
+.section.cases .td_started_by_started_by > span.prepend.automatic_task {
+  background: url("../../../themeResource?theme=portal&location=skin/images/metadata_automaticTask_small.png") transparent no-repeat left center !important;
+}
+.section.cases .td_started_by_started_by > span.prepend.call_activity {
+  background: url("../../../themeResource?theme=portal&location=skin/images/metadata_callactivity_small.png") transparent no-repeat left center !important;
+}
+.section.cases .td_started_by_started_by > span.prepend.multi_instance_activity {
+  background: url("../../../themeResource?theme=portal&location=skin/images/metadata_multi_instance_small.png") transparent no-repeat left center !important;
+}
+.section.cases .td_started_by_started_by > span.prepend.loop_activity {
+  background: url("../../../themeResource?theme=portal&location=skin/images/metadata_loop_small.png") transparent no-repeat left center !important;
+}
+.section.cases .tr {
+  padding: 6px 0 6px 10px;
+  width: 100%;
+  border: 1px solid transparent;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+.section.cases .tr:hover {
+  cursor: pointer;
+}
+.section.cases .tr:hover {
+  background-color: #ffffff;
+  border-color: #f2f2f2;
+}
+.section.cases .tr .td {
+  line-height: 1.5;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 50%;
+}
+.section.usersmapping .datatable .td {
+  float: none;
+  vertical-align: middle;
+}
+.section.usersmapping .datatable .td_firstname {
+  width: 150px;
+}
+.section.usersmapping .datatable .tr {
+  padding: 5px 0 2px 10px;
+  border: 1px solid transparent;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+.section.usersmapping .datatable .tr:hover {
+  cursor: pointer;
+}
+.section.usersmapping .datatable .tr:hover {
+  background-color: #ffffff;
+  border-color: #f2f2f2;
+}
+.section.usersmapping .datatable .tr .td_icon img {
+  max-height: 25px;
+  max-width: 25px;
+}
+.section.subgroups .datatable .td {
+  float: none;
+  vertical-align: middle;
+}
+.section.subgroups .datatable .td_icon {
+  height: 30px;
+  width: 50px;
+}
+.section.subgroups .datatable .td_icon img {
+  max-height: 25px;
+  max-width: 25px;
+}
+.section.subgroups .datatable .td_icon img {
+  max-height: 25px;
+  max-width: 25px;
+}

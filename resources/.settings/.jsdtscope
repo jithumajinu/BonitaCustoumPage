@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="features/user/tasks/list/details/|common/moment/|common/resources/|features/user/tasks/list/table/|features/user/tasks/list/common/|features/user/tasks/list/common/directive/|features/user/tasks/list/|features/user/tasks/list/filters/|features/user/tasks/list/comments/|common/i18n/|features/user/tasks/" kind="src" path="js/app"/>
+	<classpathentry kind="src" path="js/app/common/i18n"/>
+	<classpathentry kind="src" path="js/app/common/moment"/>
+	<classpathentry kind="src" path="js/app/common/resources"/>
+	<classpathentry excluding="list/details/|list/table/|list/common/|list/common/directive/|list/|list/filters/|list/comments/" kind="src" path="js/app/features/user/tasks"/>
+	<classpathentry excluding="details/|table/|common/|common/directive/|filters/|comments/" kind="src" path="js/app/features/user/tasks/list"/>
+	<classpathentry kind="src" path="js/app/features/user/tasks/list/comments"/>
+	<classpathentry excluding="directive/" kind="src" path="js/app/features/user/tasks/list/common"/>
+	<classpathentry kind="src" path="js/app/features/user/tasks/list/common/directive"/>
+	<classpathentry kind="src" path="js/app/features/user/tasks/list/details"/>
+	<classpathentry kind="src" path="js/app/features/user/tasks/list/filters"/>
+	<classpathentry kind="src" path="js/app/features/user/tasks/list/table"/>
+	<classpathentry kind="src" path="js/vendor"/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path=""/>
+</classpath>

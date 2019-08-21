@@ -1,0 +1,196 @@
+<style>
+   html, body, body #content {
+   height: 100%;
+   margin: 0;
+   }
+   #headingStyle{
+   background-color:#2c3e50;
+   font-family: "Signika-Semibold", sans-serif, sans-serif;
+   font-weight: 300;
+   color:#ffffff;
+   margin: 0;
+   }
+   .submitted .ng-invalid{
+   border: 1px solid red;
+   }
+   a.close_popup {
+   position: absolute;
+   color: transparent !important;
+   font-size: 0.0000001%;
+   background: url(themeResource?theme=portal&location=skin/images/popup-close.png) transparent no-repeat center center !important;
+   width: 50px;
+   height: 50px;
+   top: -16px;
+   right: -16px;
+   }
+   .mandatoryflag{
+   color:red;
+   }
+   .error{
+   color:red;
+   }
+   div.ui-grid-cell-contents.invalid {
+   box-shadow: inset 0px 0px 3px 1px #ff5555;
+   }
+   /*  ---  */
+   .input-help {
+   display: none;
+   position:absolute;
+   z-index: 100;
+   top: -6px;
+   left: 160px;
+   width:200px;
+   padding:10px;
+   background:#fefefe;
+   font-size:.875em;
+   border-radius:5px;
+   box-shadow:0 1px 3px #aaa;
+   border:1px solid #ddd;
+   opacity: 99;
+   }
+   .input-help::before {
+   content: "\25C0";
+   position: absolute;
+   top:10px;
+   left:-12px;
+   font-size:16px;
+   line-height:16px;
+   color:#ddd;
+   text-shadow:none;
+   }
+   .input-help h4 {
+   margin:0;
+   padding:0;
+   font-weight: normal;
+   font-size: 1.1em;
+   }
+
+
+.green .ui-grid-cell{
+  background-color: #ffffff !important;
+}
+
+.red .ui-grid-cell{
+  background-color: #f3eded !important;
+}
+</style>
+<toast></toast>
+<div class="TaskListPage" ng-cloak substitute-app form-spy
+   ng-class="{
+   'TaskListPage--small':app.smallScreen,
+   'TaskListPage--withMenu':!app.smallScreen && app.showMenu}">
+
+   <div class="modal fade" my-modal my-modal-is-open="isInEditMode" data-backdrop="static">
+      <div class="modal-dialog" style="width:90%;">
+         <div class="modal-content">
+            <div class="modal-header">
+              <a class="close_popup" ng-click="toggleEditMode()" > {{ 'Close' | custumtranslate }}</a>
+               <h4 class="modal-title" style="font-family: Signika-Semibold, sans-serif, sans-serif;font-weight: 300;color: #dd0033;margin: 0;">
+                  {{ selectedCase.processName }}
+               </h4>
+            </div>
+            <div class="modal-body">
+               <div class="row">
+                  <ng-include src="selectedCasePopUp"></ng-include>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+   <div class="TaskList"  >
+      <div class="TaskList-filters panel panel-default">
+         <div class="panel-heading title ng-binding " id="headingStyle" translate >{{ 'Migration process request list' | translate }}
+            <i ng-show="loadingTaskList" class="glyphicon glyphicon-repeat glyphicon-repeat-animate "></i>
+         </div>
+         <div class="panel-body">
+            <div class="row">
+               <div class="col-sm-3 col-lg-3" >
+                 <input style="margin-right:6px" class="form-control" ng-model="gridApi.grid.columns[3].filters[0].term" >
+             <!--
+                  <div class="dropdown" style="width: 100%">
+                     <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"   title="Selected Table" style="width: 100%;border: #0000ff solid 1px; ">
+                        <div style="max-width: 100%;width: 100%;float: left; text-align: left;padding-right:2px;overflow:hidden">
+                           <strong>{{selectedOption }}</strong>
+                        </div>
+                        <div style="max-width: 3em;width: 3em;    padding-right: 12px;"><span class="caret"></span></div>
+                     </button>
+                     <ul class="dropdown-menu" style="width: 100% ; max-height: 300px;min-height: 50px;overflow-y: auto;">
+                        <div><input style="margin-right:6px" class="form-control" ng-model="searchR1.processName" ng-click="$event.stopPropagation();"></div>
+                        <li ng-repeat="option in processChangePolicyProcessList | filter : searchR1">
+                           <a ng-click="setStatusTaskFilter(option);">{{option.processName}}</a>
+                        </li>
+                     </ul>
+                  </div>
+                -->
+                  <br>
+               </div>
+               <div class="col-sm-9 col-lg-9">
+                <!--
+                  <div class="col-sm-1 col-lg-1"  >
+                     <a   ng-click="hasSelectedGridRows() || confirmClickUp('Are you sure you want to migrate this record?','Confirmation for submit') && migrateRow()" ng-disabled="hasSelectedGridRows()" class="btn btn-default" style="margin:0 5px 5px 0;background-color:#2c3e50;color:#ffffff" confirm-click-Up  >
+                     {{ "Submit" | translate }}</a>
+                  </div>
+                  <div class="col-sm-10 col-lg-10" style="padding-top:7px" >
+                     {{'Total number to be migrated'|translate }}：<span style="color:red;font-size:12px;font-weight:bold">{{gridOptions.data.length}} </span>　
+                     ／　{{'Request Count' | translate }}：<span style="color:red;font-size:12px;font-weight:bold">{{  gridApi.selection.getSelectedGridRows().length}}</span>
+                     <span ng-show="alrtMsg.hidden" ng-class="messageClass"  style="padding-top:3px;padding-bottom:3px;margin-top:3px;">
+                     {{ alertMessage | translate}}
+                     </span>
+                  </div>
+                -->
+
+               </div>
+            </div>
+            <div id="grid1" ui-grid-auto-resize style="height: {{gridHeight}}"  ui-grid="gridOptions"   ui-grid-pagination ui-grid-auto-fit-columns ui-grid-exporter  ui-grid-resize-columns ui-grid-cellNav ui-grid-edit ui-grid-row-edit ui-grid-resize-columns ui-grid-selection ui-grid-validate   class="grid" style="height:410px;"></div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<script type="text/ng-template" id="inputForm_id_forPOPUP">
+   <div class="col-sm-12 col-lg-12">
+         <fieldset>
+            <!-- done Task -->
+            <div class="section odd performed sectionType_task tasks" id="SectionArchivedTasks">
+                      <div class="header">
+                         <span style="font-size: 150.28571429%;  font-weight: bold; color:#dd0033; " translate> Done tasks </span>
+                      </div>
+                      <div class="body">
+                         <div class="datatable table_view_list archived tasks">
+                            <div class="table ">
+                               <div class="tbody">
+                                  <div class="tr tr_1 tr_last odd" ng-repeat="doneTaskValue in doneTasks" >
+                                     <div class="td empty td_displayname td_1 odd even ">
+                                        <span  class="{{doneTaskValue.type | lowercase }} prepend" translate>Task name:</span>
+                                        <span translate > {{ doneTaskValue.displayName }} </span>
+                                     </div>
+                                     <div class="td empty td_archiveddate td_2 even odd td_archivedDate " style="width:70%">
+                                        <span class="prepend _1 odd" translate >Performed on:</span>
+                                        <span class="_2 _last even" >
+                                        {{ getFormatedDate(doneTaskValue.archivedDate)  | date:"yyyy-MM-dd ' ' h:mma " }}
+                                        </span>
+                                     </div>
+                                     <div class="td empty td_displayname td_3 odd even ">
+                                        <span class="prepend _1 odd" translate>Performed by:</span>
+                                        <span class="_2 _last even" > {{ (doneTaskValue.executedBy.firstname + " " +doneTaskValue.executedBy.lastname)  }}</span>
+                                     </div>
+                                     <div class="td empty td_displayname td_5 odd even  ">
+                                        <span class="prepend _1 odd" translate>Description:</span>
+                                        <span class="_2 _last even"  > {{ (doneTaskValue.displayDescription==="")?"No description." : doneTaskValue.displayDescription | translate }}</span>
+                                     </div>
+                                  </div>
+                                  <div ng-if="!doneTasks.length" class="tr tr_1 tr_last odd" >
+                                     <span class="prepend _1 odd" translate > No data </span>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+
+            <!--  close done task -->
+         </fieldset>
+      </div>
+</script>
